@@ -1,4 +1,4 @@
-# Plumed2.9.3 installation steps (alongwith Gromacs 2023.5) 
+# Plumed2.9.3 installation steps (and patching with Gromacs 2023.5) 
 
 According to the [installation guide](https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html)
 
