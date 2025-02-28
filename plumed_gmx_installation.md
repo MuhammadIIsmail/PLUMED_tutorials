@@ -1,31 +1,31 @@
 # plumed2.9.3 installation steps (alongwith Gromacs 2023.5) as mentioned in the installation guide: 
 
-# https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
+## https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
 
 #################################
 #      Download and unzip       #
 #################################
 
-# download plumed from: https://github.com/plumed/plumed2/releases
+## download plumed from: https://github.com/plumed/plumed2/releases
 
-tar -xzvf plumed-2.9.1.tgz
-cd plumed-2.9.3
+`tar -xzvf plumed-2.9.1.tgz`
+`cd plumed-2.9.3`
 
 #################################
 #          Configure            #
 #################################
 
-# The following are tips for the ./configure command
+## The following are tips for the ./configure command
 
-# ./configure --help # help for configure options
+## ./configure --help # help for configure options
 
-# PLUMED source code already includes a few selected VMD molfile plugins so as to read a small number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If you configure PLUMED with the full set of VMD plugins you will be able to read many more trajectory formats, basically all of those supported by VMD.
+## PLUMED source code already includes a few selected VMD molfile plugins so as to read a small number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If you configure PLUMED with the full set of VMD plugins you will be able to read many more trajectory formats, basically all of those supported by VMD.
 
 #################################
 #   Download and install VMD    #
 #################################
 
-# Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
+## Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
 
 tar xvzf vmd-1.9.4a55.bin.LINUXAMD64-CUDA102-OptiX650-OSPRay185-RTXRTRT.opengl.tar.gz
 cd vmd-1.9.4a55
@@ -36,29 +36,29 @@ cd src/
 sudo make install
 
 
-# ./configure LDFLAGS="-L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
+## ./configure LDFLAGS="-L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
 
-# Notice that it might be necessary to add to LDFLAGS the path to your TCL interpreter, e.g.
+## Notice that it might be necessary to add to LDFLAGS the path to your TCL interpreter, e.g.
 
-# ./configure LDFLAGS="-ltcl8.5 -L/mypathtotcl -L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
+## ./configure LDFLAGS="-ltcl8.5 -L/mypathtotcl -L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
             
-# PLUMED includes some additional modules that by default are not compiled, but can be enabled during configuration. You can use the option --enable-modules to activate some of them, e.g.
+## PLUMED includes some additional modules that by default are not compiled, but can be enabled during configuration. You can use the option --enable-modules to activate some of them, e.g.
 
-# ./configure --enable-modules=module1name+module2name
+## ./configure --enable-modules=module1name+module2name
 
-# --enable-modules=all 
+## --enable-modules=all 
 
-# not enabled modules include: pytorch, opes, funnel
+## not enabled modules include: pytorch, opes, funnel
 
-# To install PLUMED one should first decide the location: 
+## To install PLUMED one should first decide the location: 
 
-# ./configure --prefix=$HOME/opt
+## ./configure --prefix=$HOME/opt
 
-# As of PLUMED 2.5 you cannot anymore change the location during install. If you didn't      # specify the --prefix option during configure PLUMED will be installed in /usr/local.
+## As of PLUMED 2.5 you cannot anymore change the location during install. If you didn't      # specify the --prefix option during configure PLUMED will be installed in /usr/local.
 
-# The install command should be executed with root permissions (e.g. "sudo make install") if # you want to install PLUMED on a system directory.
+## The install command should be executed with root permissions (e.g. "sudo make install") if # you want to install PLUMED on a system directory.
 
-# FINAL 
+## FINAL 
 
 ./configure --enable-modules=all LDFLAGS="-L/usr/local/lib/vmd/plugins/LINUXAMD64/molfile" CPPFLAGS="-I/usr/local/lib/vmd/plugins/include -I/usr/local/lib/vmd/plugins/LINUXAMD64/molfile"
 
