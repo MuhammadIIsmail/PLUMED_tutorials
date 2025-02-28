@@ -5,7 +5,7 @@
 ## 1. Download and unzip
 
 ###### Download plumed from: https://github.com/plumed/plumed2/releases
-
+###### Unzip 
 `tar -xzvf plumed-2.9.1.tgz`
 
 `cd plumed-2.9.3`
