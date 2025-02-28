@@ -2,7 +2,7 @@
 
 ###### https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
 
-#### Download and unzip
+### 1. Download and unzip
 
 ###### download plumed from: https://github.com/plumed/plumed2/releases
 
