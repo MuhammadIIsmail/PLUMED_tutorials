@@ -123,10 +123,10 @@ To patch your MD code, you should have already installed PLUMED properly. This i
 ## 7. Configure and compile Gromacs
 
 
-###### Configure and compile your MD engine (look for the instructions in its documentation).
-###### Test if the MD code is working properly.
+Configure and compile your MD engine (look for the instructions in its documentation).
+Test if the MD code is working properly.
 
-###### download gromacs 2023.5 from https://manual.gromacs.org/documentation/2023.5/download.html
+###### a. Download gromacs 2023.5 from https://manual.gromacs.org/documentation/2023.5/download.html
 
 `tar xfz gromacs-2023.5.tar.gz`
 
@@ -142,7 +142,7 @@ To patch your MD code, you should have already installed PLUMED properly. This i
 
 `make check`
 
-###### Go to the root directory for the source code of the MD engine.
+###### b. Go to the root directory for the source code of the MD engine.
 
 `cd ..`
 
