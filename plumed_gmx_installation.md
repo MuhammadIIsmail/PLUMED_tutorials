@@ -4,35 +4,31 @@
 
 ## 1. Download and unzip
 
-###### download plumed from: https://github.com/plumed/plumed2/releases
+###### Download plumed from: https://github.com/plumed/plumed2/releases
 
 `tar -xzvf plumed-2.9.1.tgz`
 
 `cd plumed-2.9.3`
 
-#################################
-#          Configure            #
-#################################
+## 2. Configure
 
-## The following are tips for the ./configure command
+###### The following are tips for the ./configure command
 
-## ./configure --help # help for configure options
+###### ./configure --help # help for configure options
 
-## PLUMED source code already includes a few selected VMD molfile plugins so as to read a small number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If you configure PLUMED with the full set of VMD plugins you will be able to read many more trajectory formats, basically all of those supported by VMD.
+###### PLUMED source code already includes a few selected VMD molfile plugins so as to read a small number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If you configure PLUMED with the full set of VMD plugins you will be able to read many more trajectory formats, basically all of those supported by VMD.
 
-#################################
-#   Download and install VMD    #
-#################################
+## 3. Download and install VMD
 
-## Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
+###### Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
 
-tar xvzf vmd-1.9.4a55.bin.LINUXAMD64-CUDA102-OptiX650-OSPRay185-RTXRTRT.opengl.tar.gz
+`tar xvzf vmd-1.9.4a55.bin.LINUXAMD64-CUDA102-OptiX650-OSPRay185-RTXRTRT.opengl.tar.gz
 cd vmd-1.9.4a55
 sudo apt-get update
 sudo apt-get upgrade
 ./configure
 cd src/
-sudo make install
+sudo make install`
 
 
 ## ./configure LDFLAGS="-L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
