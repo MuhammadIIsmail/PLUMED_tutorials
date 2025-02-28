@@ -58,9 +58,9 @@ To install PLUMED one should first decide the location:
 
 ./configure --prefix=$HOME/opt
 
-###### As of PLUMED 2.5 you cannot anymore change the location during install. If you didn't      # specify the --prefix option during configure PLUMED will be installed in /usr/local.
+As of PLUMED 2.5 you cannot anymore change the location during install. If you didn't      # specify the --prefix option during configure PLUMED will be installed in /usr/local.
 
-###### The install command should be executed with root permissions (e.g. "sudo make install") if # you want to install PLUMED on a system directory.
+The install command should be executed with root permissions (e.g. "sudo make install") if # you want to install PLUMED on a system directory.
 
 ##### FINAL 
 
@@ -68,27 +68,27 @@ To install PLUMED one should first decide the location:
 
 ## 4. Compile
 
-###### Once configured, PLUMED can be compiled using the following command: 
+Once configured, PLUMED can be compiled using the following command: 
 
 `make -j 4`
 
-###### You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 warned that some of them fail because of the different numerical accuracy on different machines. As of version 2.4, in order to test the plumed executable that you just compiled (prior to installing it) you can use the following command 
+You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 warned that some of them fail because of the different numerical accuracy on different machines. As of version 2.4, in order to test the plumed executable that you just compiled (prior to installing it) you can use the following command 
 
 `make check`
 
-######  In addition, similarly to previous versions of PLUMED, you can test the plumed executable that is in your current path with 
+In addition, similarly to previous versions of PLUMED, you can test the plumed executable that is in your current path with 
 
 `cd regtest`
 
 `make`
 
-###### You can check the exact version they will use by using the command 
+You can check the exact version they will use by using the command 
 
 `which plumed`
 
 ## 5. Install
 
-###### It is strongly suggested to install PLUMED in a predefined location. This is done using 
+It is strongly suggested to install PLUMED in a predefined location. This is done using 
 
 `sudo make install`
 
@@ -96,7 +96,7 @@ To install PLUMED one should first decide the location:
 ## 6. Patch MD code (1)
 
 
-###### A growing number of MD codes can use PLUMED without any modification. If you are using one of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is not supporting PLUMED already, you should modify it. We provide scripts to adjust some of the most popular MD codes so as to provide PLUMED support. At the present times we support patching the following list of codes:
+A growing number of MD codes can use PLUMED without any modification. If you are using one of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is not supporting PLUMED already, you should modify it. We provide scripts to adjust some of the most popular MD codes so as to provide PLUMED support. At the present times we support patching the following list of codes:
 
     gromacs-2020-7
     gromacs-2021-7
@@ -111,7 +111,7 @@ To install PLUMED one should first decide the location:
     qespresso-7-0
     qespresso-7-2
 
-###### To patch your MD code, you should have already installed PLUMED properly. This is necessary as you need to have the command "plumed" in your execution path.
+To patch your MD code, you should have already installed PLUMED properly. This is necessary as you need to have the command "plumed" in your execution path.
 
 `plumed`
 
