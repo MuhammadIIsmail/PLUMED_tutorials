@@ -4,8 +4,10 @@ According to the [installation guide](https://www.plumed.org/doc-v2.9/user-doc/h
 
 ## 1. Download and unzip
 
-Download plumed from: https://github.com/plumed/plumed2/releases
-Unzip 
+###### a. Download plumed from: https://github.com/plumed/plumed2/releases
+
+###### b. Unzip 
+
 `tar -xzvf plumed-2.9.1.tgz`
 
 `cd plumed-2.9.3`
@@ -20,7 +22,7 @@ PLUMED source code already includes a few selected VMD molfile plugins so as to 
 
 ## 3. Download and install VMD
 
-Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
+###### a. Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
 
 `tar xvzf vmd-1.9.4a55.bin.LINUXAMD64-CUDA102-OptiX650-OSPRay185-RTXRTRT.opengl.tar.gz`
 
@@ -35,6 +37,7 @@ Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?Package
 `cd src/`
 
 `sudo make install`
+
 
 
 ./configure LDFLAGS="-L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
