@@ -61,42 +61,39 @@
 
 ##### FINAL 
 
-./configure --enable-modules=all LDFLAGS="-L/usr/local/lib/vmd/plugins/LINUXAMD64/molfile" CPPFLAGS="-I/usr/local/lib/vmd/plugins/include -I/usr/local/lib/vmd/plugins/LINUXAMD64/molfile"
+`./configure --enable-modules=all LDFLAGS="-L/usr/local/lib/vmd/plugins/LINUXAMD64/molfile" CPPFLAGS="-I/usr/local/lib/vmd/plugins/include -I/usr/local/lib/vmd/plugins/LINUXAMD64/molfile"`
 
-#################################
-#           Compile             #
-#################################
+## 4. Compile
 
-# Once configured, PLUMED can be compiled using the following command: 
+###### Once configured, PLUMED can be compiled using the following command: 
 
-make -j 4
+`make -j 4`
 
-# You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 warned that some of them fail because of the different numerical accuracy on different machines. As of version 2.4, in order to test the plumed executable that you just compiled (prior to installing it) you can use the following command 
+###### You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 warned that some of them fail because of the different numerical accuracy on different machines. As of version 2.4, in order to test the plumed executable that you just compiled (prior to installing it) you can use the following command 
 
-make check
+`make check`
 
-#  In addition, similarly to previous versions of PLUMED, you can test the plumed executable that is in your current path with 
+######  In addition, similarly to previous versions of PLUMED, you can test the plumed executable that is in your current path with 
 
-cd regtest
-make
+`cd regtest`
 
-# You can check the exact version they will use by using the command 
+`make`
 
-which plumed
+###### You can check the exact version they will use by using the command 
 
-#################################
-#           Install             #
-#################################
+`which plumed`
 
-# It is strongly suggested to install PLUMED in a predefined location. This is done using 
+## 5. Install
 
-sudo make install
+###### It is strongly suggested to install PLUMED in a predefined location. This is done using 
 
-#################################
-#        Patch MD code (1)      #
-#################################
+`sudo make install`
 
-# A growing number of MD codes can use PLUMED without any modification. If you are using one of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is not supporting PLUMED already, you should modify it. We provide scripts to adjust some of the most popular MD codes so as to provide PLUMED support. At the present times we support patching the following list of codes:
+
+## 6. Patch MD code (1)
+
+
+###### A growing number of MD codes can use PLUMED without any modification. If you are using one of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is not supporting PLUMED already, you should modify it. We provide scripts to adjust some of the most popular MD codes so as to provide PLUMED support. At the present times we support patching the following list of codes:
 
     gromacs-2020-7
     gromacs-2021-7
@@ -111,65 +108,64 @@ sudo make install
     qespresso-7-0
     qespresso-7-2
 
-# To patch your MD code, you should have already installed PLUMED properly. This is necessary as you need to have the command "plumed" in your execution path.
+###### To patch your MD code, you should have already installed PLUMED properly. This is necessary as you need to have the command "plumed" in your execution path.
 
-plumed
+`plumed`
 
-# There are different options available when patching. You can check all of them using:
+###### There are different options available when patching. You can check all of them using:
 
-plumed patch --help
-
-#################################
-# Configure and compile Gromacs #
-#################################
-
-# Configure and compile your MD engine (look for the instructions in its documentation).
-# Test if the MD code is working properly.
-
-# download gromacs 2023.5 from https://manual.gromacs.org/documentation/2023.5/download.html
-
-tar xfz gromacs-2023.5.tar.gz
-cd gromacs-2023.5
-mkdir build
-cd build
-
-cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DGMX_GPU=CUDA -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -DCMAKE_INSTALL_PREFIX=/usr/local/gromacs-2023 -DOXYGEN_EXECUTABLE=/bin
-
-make
-make check
-
-# Go to the root directory for the source code of the MD engine.
-
-cd ..
-
-#################################
-#        Patch MD code (2)      #
-#################################
-
-# Patch with PLUMED using: 
-
-plumed patch -p
-
-# The script will interactively ask which MD engine you are patching.
-# Once you have patched recompile the MD code (if dependencies are set up properly in the MD engine, only modified files will be recompiled)
-
-#################################
-#       Recompile Gromacs       #
-#################################
-
-cd build
-
-make
-make check
-
-#################################
-#       Install Gromacs         #
-#################################
-
-sudo make install
-source /usr/local/gromacs-2023/bin/GMXRC
+`plumed patch --help`
 
 
+## 7. Configure and compile Gromacs
 
 
+###### Configure and compile your MD engine (look for the instructions in its documentation).
+###### Test if the MD code is working properly.
 
+###### download gromacs 2023.5 from https://manual.gromacs.org/documentation/2023.5/download.html
+
+`tar xfz gromacs-2023.5.tar.gz`
+
+`cd gromacs-2023.5`
+
+`mkdir build`
+
+`cd build`
+
+`cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DGMX_GPU=CUDA -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -DCMAKE_INSTALL_PREFIX=/usr/local/gromacs-2023 -DOXYGEN_EXECUTABLE=/bin`
+
+`make`
+
+`make check`
+
+###### Go to the root directory for the source code of the MD engine.
+
+`cd ..`
+
+
+## 8. Patch MD code (2)
+
+
+###### Patch with PLUMED using: 
+
+`plumed patch -p`
+
+###### The script will interactively ask which MD engine you are patching.
+###### Once you have patched recompile the MD code (if dependencies are set up properly in the MD engine, only modified files will be recompiled)
+
+
+## 9. Recompile Gromacs
+
+`cd build`
+
+`make`
+
+`make check`
+
+
+## 10. Install Gromacs
+
+`sudo make install`
+
+`source /usr/local/gromacs-2023/bin/GMXRC`
