@@ -4,7 +4,7 @@ According to the [installation guide](https://www.plumed.org/doc-v2.9/user-doc/h
 
 ## 1. Download and unzip
 
-###### a. Download plumed from: https://github.com/plumed/plumed2/releases
+###### a. Download plumed from [here](https://github.com/plumed/plumed2/releases)
 
 ###### b. Unzip 
 
@@ -22,7 +22,7 @@ PLUMED source code already includes a few selected VMD molfile plugins so as to 
 
 ## 3. Download and install VMD
 
-###### a. Download from: https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
+###### a. Download from [here](https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD)
 
 `tar xvzf vmd-1.9.4a55.bin.LINUXAMD64-CUDA102-OptiX650-OSPRay185-RTXRTRT.opengl.tar.gz`
 
@@ -37,7 +37,6 @@ PLUMED source code already includes a few selected VMD molfile plugins so as to 
 `cd src/`
 
 `sudo make install`
-
 
 
 ./configure LDFLAGS="-L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
@@ -126,7 +125,7 @@ To patch your MD code, you should have already installed PLUMED properly. This i
 Configure and compile your MD engine (look for the instructions in its documentation).
 Test if the MD code is working properly.
 
-###### a. Download gromacs 2023.5 from https://manual.gromacs.org/documentation/2023.5/download.html
+###### a. Download gromacs 2023.5 from [here](https://manual.gromacs.org/documentation/2023.5/download.html)
 
 `tar xfz gromacs-2023.5.tar.gz`
 
