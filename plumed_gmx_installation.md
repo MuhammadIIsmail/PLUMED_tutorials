@@ -1,12 +1,13 @@
 # Plumed2.9.3 installation steps (alongwith Gromacs 2023.5) as mentioned in the installation guide: 
 
-### https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
+###### https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
 
-### Download and unzip
+###### Download and unzip
 
-## download plumed from: https://github.com/plumed/plumed2/releases
+###### download plumed from: https://github.com/plumed/plumed2/releases
 
 `tar -xzvf plumed-2.9.1.tgz`
+
 `cd plumed-2.9.3`
 
 #################################
