@@ -1,6 +1,4 @@
-# plumed2.9.3 installation steps (alongwith Gromacs 2023.5)
-
-# as mentioned in the installation guide: 
+# plumed2.9.3 installation steps (alongwith Gromacs 2023.5) as mentioned in the installation guide: 
 
 # https://www.plumed.org/doc-v2.9/user-doc/html/_installation.html
 
@@ -21,7 +19,7 @@ cd plumed-2.9.3
 
 # ./configure --help # help for configure options
 
-# PLUMED source code already includes a few selected VMD molfile plugins so as to read a small # number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If # you configure PLUMED with the full set of VMD plugins you will be able to read many more    # trajectory formats, basically all of those supported by VMD.
+# PLUMED source code already includes a few selected VMD molfile plugins so as to read a small number of additional trajectory formats (e.g., dcd, gromacs files, pdb, and amber files). If you configure PLUMED with the full set of VMD plugins you will be able to read many more trajectory formats, basically all of those supported by VMD.
 
 #################################
 #   Download and install VMD    #
@@ -42,8 +40,7 @@ sudo make install
 
 # Notice that it might be necessary to add to LDFLAGS the path to your TCL interpreter, e.g.
 
-# ./configure LDFLAGS="-ltcl8.5 -L/mypathtotcl -L/pathtovmdplugins/ARCH/molfile" \
-            CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
+# ./configure LDFLAGS="-ltcl8.5 -L/mypathtotcl -L/pathtovmdplugins/ARCH/molfile" CPPFLAGS="-I/pathtovmdplugins/include -I/pathtovmdplugins/ARCH/molfile"
             
 # PLUMED includes some additional modules that by default are not compiled, but can be enabled during configuration. You can use the option --enable-modules to activate some of them, e.g.
 
@@ -73,11 +70,11 @@ sudo make install
 
 make -j 4
 
-# You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 # warned that some of them fail because of the different numerical accuracy on different      # machines. As of version 2.4, in order to test the plumed executable that you just compiled  # (prior to installing it) you can use the following command 
+# You can also check if PLUMED is correctly compiled by performing our regression tests. Be 3 warned that some of them fail because of the different numerical accuracy on different machines. As of version 2.4, in order to test the plumed executable that you just compiled (prior to installing it) you can use the following command 
 
 make check
 
-#  In addition, similarly to previous versions of PLUMED, you can test the plumed executable  # that is in your current path with 
+#  In addition, similarly to previous versions of PLUMED, you can test the plumed executable that is in your current path with 
 
 cd regtest
 make
@@ -98,7 +95,7 @@ sudo make install
 #        Patch MD code (1)      #
 #################################
 
-# A growing number of MD codes can use PLUMED without any modification. If you are using one # of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is # not supporting PLUMED already, you should modify it. We provide scripts to adjust some of  # the most popular MD codes so as to provide PLUMED support. At the present times we support # patching the following list of codes:
+# A growing number of MD codes can use PLUMED without any modification. If you are using one of these codes, refer to its manual to know how to activate PLUMED. In case your MD code is not supporting PLUMED already, you should modify it. We provide scripts to adjust some of the most popular MD codes so as to provide PLUMED support. At the present times we support patching the following list of codes:
 
     gromacs-2020-7
     gromacs-2021-7
@@ -113,7 +110,7 @@ sudo make install
     qespresso-7-0
     qespresso-7-2
 
-# To patch your MD code, you should have already installed PLUMED properly. This is necessary # as you need to have the command "plumed" in your execution path.
+# To patch your MD code, you should have already installed PLUMED properly. This is necessary as you need to have the command "plumed" in your execution path.
 
 plumed
 
@@ -153,7 +150,7 @@ cd ..
 plumed patch -p
 
 # The script will interactively ask which MD engine you are patching.
-# Once you have patched recompile the MD code (if dependencies are set up properly in the MD  # engine, only modified files will be recompiled)
+# Once you have patched recompile the MD code (if dependencies are set up properly in the MD engine, only modified files will be recompiled)
 
 #################################
 #       Recompile Gromacs       #
